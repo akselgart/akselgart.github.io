@@ -1,0 +1,199 @@
+/* Generelt for nettsiden */
+
+
+*{
+    box-sizing: border-box;
+    z-index: 1;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    background-color: #1C0A00;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Generelt for nettsiden ^ */
+
+/* Header */
+.text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+header{
+/*     background-color: #DFD3C3;
+ */    display:flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    transition: all 1s ;
+}
+
+header nav{
+    display:flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+header .topnav a{
+    font-weight: bold;
+}
+
+header .topnav{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+header a{
+    display:flex;
+    justify-content: center;
+    color:white;
+    text-decoration: none;
+    padding:20px;
+    position:relative;
+}
+
+header a::before{
+    position:absolute;
+    content:"";
+    height:5px;
+    width:0%;
+    background-color: white;
+    bottom:0;
+    transition-property: width;
+    transition:ease-in 200ms;
+}
+
+header a:hover::before{
+    width:100%;
+}
+
+.fa-bars{
+    color:#7D6E83;
+    display:none;
+
+    font-size: 30px;
+    padding: 5px 20px;
+}
+
+@media(max-width: 600px){
+
+    header{
+        flex-direction: column;
+    }
+
+    header .topnav{
+        width: 100%;
+    }
+
+    header nav{
+        display:none;
+    }
+
+    .fa-bars {
+        display:flex;
+        align-items: center;
+    }
+
+    header nav.show{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.skjul{
+    display: none;
+}
+
+/* Header ^ */
+
+/* Main */
+
+.forside{
+    background-image: url(./bilder/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section1{
+    background-color: #603601;
+}
+.section2{
+    background-color: #361500;
+}
+.section3{
+    background-color:#1C0A00;
+}
+.kort{
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 6rem;
+    position: relative;
+    left: -100vw;
+    transition: all 1s;
+    border-radius: 5px;
+}
+.kort img{
+    width: 500px;
+    border-radius: 5px;
+    transition: all 400ms;
+}
+.kort p{
+    color: white;
+}
+
+.kort.active{
+    left: 20px;
+}
+.kort1{
+    background-color: #361500;
+}
+
+.kort2{
+    background-color: #603601;
+    
+}
+
+.kort3{
+    background-color: #CC9544;
+}
+
+.kort .link a{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
+    transition: all 400ms;
+}
+.kort .link a:hover{
+    background: black;
+    color: white;
+}
+.kort img:hover{
+    filter: grayscale(100%);
+}
